@@ -1,6 +1,7 @@
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
         
+         
         for i in range(n):
             nums[i] = nums[i] << 10
             nums[i] = nums[i] | nums[i + n]
@@ -13,3 +14,6 @@ class Solution:
             nums[j - 1] = x
             j -= 2
         return nums
+
+
+
