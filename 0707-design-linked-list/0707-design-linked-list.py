@@ -41,7 +41,10 @@ class MyLinkedList:
         while cur and index > 0:
             cur = cur.next
             index -= 1  
-        if cur and index == 0:
+        if index != 0:
+            self.addAtTail(val)
+
+        elif cur and index == 0:
             node, next, prev = ListNode(val), cur, cur.prev
             prev.next = node
             next.prev = node
