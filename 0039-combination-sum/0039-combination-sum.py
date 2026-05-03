@@ -2,7 +2,7 @@ class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
 
-        def backtrack(start: int, current: List, remainder: int):
+        def backtrack(start: int, current: List[int], remainder: int):
             if remainder == 0:
                 res.append(list(current))
                 return
