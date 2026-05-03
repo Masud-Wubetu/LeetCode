@@ -51,10 +51,11 @@ class KthLargest:
     def add(self, val: int) -> int:
         self.push(val)
 
-        if len(self.heap) - 1 > self.k:
+        if len(self.heap)- 1 > self.k:
             self.pop()
         
         return self.heap[1]
+        
 
 
 # Your KthLargest object will be instantiated and called as such:
