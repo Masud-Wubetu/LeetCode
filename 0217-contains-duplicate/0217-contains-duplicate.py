@@ -1,10 +1,13 @@
-from collections import Counter
+
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        count = Counter(nums) 
+        
+        countMap = {}
 
-        for num in count:
-            if count[num] > 1:
+        for num in nums:
+            if num  not in countMap:
+                countMap[num] = 1
+            else:
                 return True
         
         return False
