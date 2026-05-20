@@ -6,20 +6,21 @@
 #         self.right = right
 class Solution:
     def distributeCoins(self, root: Optional[TreeNode]) -> int:
-        self.move_count = 0
+        self.move = 0
 
         def dfs(curr):
             if not curr:
                 return 0
             
-            lec = dfs(curr.left)
-            rec = dfs(curr.right)
+            left = dfs(curr.left)
+            right = dfs(curr.right)
 
-            tec = curr.val - 1 + lec + rec
+            self.move += abs(left) + abs(right)
 
-            self.move_count += abs(tec)
-
-            return tec
-
+            return curr.val - 1 + left + right
+        
         dfs(root)
-        return self.move_count
+
+        return self.move
+
+        
